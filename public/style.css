@@ -1,0 +1,36 @@
+.row	{
+	margin: 20px;
+}
+
+.jumbotron {
+	text-align: center;
+	background-color: #A85A11;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+
+#random {
+	display: none;
+}
+
+#mine {
+	display: none;
+}
+
+#submitProj {
+	display: none;
+}
+
+.btn {
+	background-color: #224B55;
+	color: white;
+}
+
+.login {
+	margin-top: 5px;
+	max-width: 500px;
+}
+
+body {
+	background-color: #1189A8;
+}

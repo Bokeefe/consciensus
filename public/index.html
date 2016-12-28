@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Submitify</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./style.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="./index_front.js"></script>
+</head>
+<body>
+	<div id="project_template" class="well" style="display: none;">
+		<h3 class="project_name"></h3>
+		<p class="project_author"></p>
+		<p class="project_description"></p>
+		<p class="vote_count"></p>
+		<button class="project_vote btn">Vote</button>
+	</div>
+	
+	<div class="containter">
+		<div class="jumbotron">
+			<h1>Welcome to Consiensus !!!</h1>
+			<p>Reaching consensus IRL.</p>
+		</div>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="./" class="navbar-brand">CNSNSS!</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li id="get_random"><a>Get Random Projects</a></li>
+					<li><a href="/">Get Top Projects</a></li>
+					<li id="yourProjects"><a>See Your Projects</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="addProj"><a>Submit A Project</a></li>
+					<li id="logout"><a>Log Out</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row" id="main">
+			<div class="col-md-6">
+				<h3>Top 5 Projects: </h3>
+				<div id="projects">
+					
+				</div>
+
+
+			</div>
+
+			<div class="col-md-6">
+				<h3>5 Newest Projects: </h3>
+				<div id="newest">
+					
+				</div>
+			</div>
+		</div>
+
+	<div class="row" id="random">
+		<h3>Random Ten or Fewer</h3>
+		<div class="col-md-6">
+			<div id="random1"></div>
+		</div>
+		<div class="col-md-6">
+			<div id="random2"></div>
+		</div>
+	</div>
+
+	<div class="row" id="mine">
+		<h3>My Projects</h3>
+		<div class="col-md-6">
+			<div id="mine1"></div>
+		</div>
+		<div class="col-md-6">
+			<div id="mine2"></div>
+		</div>
+	</div>
+
+	<div class="row" id="submitProj">
+		<div class="form-group">
+			<label>Project Name: </label>
+			<p><input id="new_project_name" class="form-control"></p>
+			<label>Project Description: </label>
+			<p><textarea id="new_project_description" class="form-control"></textarea></p>
+			<p><button id="send_new_project" class="btn">Submit Project</button></p>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

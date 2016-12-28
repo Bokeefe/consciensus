@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./style.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="jumbotron">
+		<h1>Welcome to submitify.io !!!</h1>
+		<p>The #1 place to submit and vote on project ideas.</p>
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="./" class="navbar-brand">SBMTFY!</a>
+			</div>
+		</div>
+	</nav>
+	<div class="well login">
+		<form action="" class="form-group">
+			<label for="">Username: </label>
+			<input id="username" class="form-control login">
+			<label for="">Password: </label>
+			<input id="password" type="password" class="form-control login">
+			<button id="login" class="btn login">Log In</button>
+			<button id="signup" class="btn login">Sign Up</button>
+		</form>
+	</div>
+	<script>
+		$('#login').click(function() {
+			$.post('/api/login', {
+				username: $('#username').val(),
+				password: $('#password').val()
+			}, function(res) {
+				if (res === "success") {
+					document.location = "/";
+				} else {
+					alert("username or password was incorrect, try again.");
+				}
+			});
+		});
+
+		$('#signup').click(function(){
+			$.post('/api/signup', {
+				username: $('#username').val(),
+				password: $('#password').val()
+			}, function(res){
+				if (res === "success") {
+					document.location = "/";
+				} else {
+					alert("Username taken or password does not meet requirements, please try again.");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
